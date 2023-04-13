@@ -1,0 +1,84 @@
+
+.widget.widget_search form {
+	overflow: hidden;
+}
+#wp-calendar #prev a,
+#wp-calendar #next a{
+	color: transparent;
+}
+.widget .ct-teams-name {
+	clear: both;
+}
+
+
+.testimonials-style-1-name.ct-testimonial-name{
+	text-transform: uppercase
+}
+.testimonials-style-1-teg {
+	font-size: 58px;
+}
+.widget_nav_menu li a:after,
+.widget_submenu li a:after {
+	position: absolute;
+	right: 30px;
+}
+
+#colophon .wpcf7-validation-errors,
+#colophon .wpcf7-not-valid-tip {
+	display: none !important;
+}
+/*footer*/
+
+body .widget_tag_cloud .tagcloud a:hover{
+	border: 1px solid transparent;
+}
+
+.widget :after,
+.widget :before,
+.widget a,
+.widget a:hover,
+.widget.widget_search .ct-button:hover,
+.widget.widget_search .ct-button,
+body .widget_tag_cloud .tagcloud a,
+body .widget_tag_cloud .tagcloud a:hover,
+.ct-widget-testimonials-prev-style-1.ct-prev:after,
+.ct-widget-testimonials-next-style-1.ct-next:after,
+.ct-widget-testimonials-prev-style-1.ct-prev:hover:after,
+.ct-widget-testimonials-next-style-1.ct-next:hover:after,
+.ct-widget-testimonials-prev-style-2.ct-prev:after,
+.ct-widget-testimonials-next-style-2.ct-next:after,
+.ct-widget-testimonials-prev-style-2.ct-prev:hover:after,
+.ct-widget-testimonials-next-style-2.ct-next:hover:after,
+#colophon .widget.widget_search .ct-button:hover,
+#colophon #mc4wp_submit:hover,
+#colophon .widget.widget_search .ct-button:hover,
+body #colophon .tagcloud a:hover,
+#colophon .widget.widget_search .ct-button {
+	-o-transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+
+
+body  .portfolio-items-masonry.background-style-dark  .portfolio-item .caption {
+	border-bottom: none;
+}
+
+/*hardcode*/
+
+#colophon .widget  .ct-products-content {
+	display: table-cell;
+	width: 100%;
+	vertical-align: middle;
+}
+#colophon .widget .ct-products-image {
+	display: table-cell;
+}
+#colophon .team-person-email a:before
+{
+	margin-right: 0px;
+}
+.widget-teams {
+position: relative;
+}

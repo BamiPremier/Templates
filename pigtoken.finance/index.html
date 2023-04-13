@@ -1,0 +1,1412 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>Pig Token &#8211; Yield Generation Protocol</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Pig Token &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Pig Token &raquo; Comments Feed" href="comments/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/pigtoken.finance\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='wp-includes/css/dist/block-library/style.min.css@ver=5.7.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='hello-elementor-css'  href='wp-content/themes/hello-elementor/style.min.css@ver=2.3.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='hello-elementor-theme-style-css'  href='wp-content/themes/hello-elementor/theme.min.css@ver=2.3.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css'  href='wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css@ver=5.11.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-animations-css'  href='wp-content/plugins/elementor/assets/lib/animations/animations.min.css@ver=3.1.4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css'  href='wp-content/plugins/elementor/assets/css/frontend.min.css@ver=3.1.4.css' type='text/css' media='all' />
+<style id='elementor-frontend-inline-css' type='text/css'>
+.ha-css-transform-yes{-webkit-transition-duration:var(--ha-tfx-transition-duration,.2s);transition-duration:var(--ha-tfx-transition-duration,.2s);-webkit-transition-property:-webkit-transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-transform:translate(var(--ha-tfx-translate-x,0),var(--ha-tfx-translate-y,0)) scale(var(--ha-tfx-scale-x,1),var(--ha-tfx-scale-y,1)) skew(var(--ha-tfx-skew-x,0),var(--ha-tfx-skew-y,0)) rotateX(var(--ha-tfx-rotate-x,0)) rotateY(var(--ha-tfx-rotate-y,0)) rotateZ(var(--ha-tfx-rotate-z,0));transform:translate(var(--ha-tfx-translate-x,0),var(--ha-tfx-translate-y,0)) scale(var(--ha-tfx-scale-x,1),var(--ha-tfx-scale-y,1)) skew(var(--ha-tfx-skew-x,0),var(--ha-tfx-skew-y,0)) rotateX(var(--ha-tfx-rotate-x,0)) rotateY(var(--ha-tfx-rotate-y,0)) rotateZ(var(--ha-tfx-rotate-z,0))}.ha-css-transform-yes:hover{-webkit-transform:translate(var(--ha-tfx-translate-x-hover,var(--ha-tfx-translate-x,0)),var(--ha-tfx-translate-y-hover,var(--ha-tfx-translate-y,0))) scale(var(--ha-tfx-scale-x-hover,var(--ha-tfx-scale-x,1)),var(--ha-tfx-scale-y-hover,var(--ha-tfx-scale-y,1))) skew(var(--ha-tfx-skew-x-hover,var(--ha-tfx-skew-x,0)),var(--ha-tfx-skew-y-hover,var(--ha-tfx-skew-y,0))) rotateX(var(--ha-tfx-rotate-x-hover,var(--ha-tfx-rotate-x,0))) rotateY(var(--ha-tfx-rotate-y-hover,var(--ha-tfx-rotate-y,0))) rotateZ(var(--ha-tfx-rotate-z-hover,var(--ha-tfx-rotate-z,0)));transform:translate(var(--ha-tfx-translate-x-hover,var(--ha-tfx-translate-x,0)),var(--ha-tfx-translate-y-hover,var(--ha-tfx-translate-y,0))) scale(var(--ha-tfx-scale-x-hover,var(--ha-tfx-scale-x,1)),var(--ha-tfx-scale-y-hover,var(--ha-tfx-scale-y,1))) skew(var(--ha-tfx-skew-x-hover,var(--ha-tfx-skew-x,0)),var(--ha-tfx-skew-y-hover,var(--ha-tfx-skew-y,0))) rotateX(var(--ha-tfx-rotate-x-hover,var(--ha-tfx-rotate-x,0))) rotateY(var(--ha-tfx-rotate-y-hover,var(--ha-tfx-rotate-y,0))) rotateZ(var(--ha-tfx-rotate-z-hover,var(--ha-tfx-rotate-z,0)))}.happy-addon>.elementor-widget-container{word-wrap:break-word;overflow-wrap:break-word;box-sizing:border-box}.happy-addon>.elementor-widget-container *{box-sizing:border-box}.happy-addon p:empty{display:none}.happy-addon .elementor-inline-editing{min-height:auto!important}.happy-addon-pro img{max-width:100%;height:auto;object-fit:cover}.ha-screen-reader-text{position:absolute;overflow:hidden;clip:rect(1px,1px,1px,1px);margin:-1px;padding:0;width:1px;height:1px;border:0;word-wrap:normal!important;-webkit-clip-path:inset(50%);clip-path:inset(50%)}.ha-has-bg-overlay>.elementor-widget-container{position:relative;z-index:1}.ha-has-bg-overlay>.elementor-widget-container:before{position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%;content:""}.ha-popup--is-enabled .ha-js-popup,.ha-popup--is-enabled .ha-js-popup img{cursor:-webkit-zoom-in!important;cursor:zoom-in!important}.mfp-wrap .mfp-arrow,.mfp-wrap .mfp-close{background-color:transparent}.mfp-wrap .mfp-arrow:focus,.mfp-wrap .mfp-close:focus{outline-width:thin}
+</style>
+<link rel='stylesheet' id='elementor-post-6-css'  href='wp-content/uploads/elementor/css/post-6.css@ver=1618109023.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-pro-css'  href='wp-content/plugins/elementor-pro/assets/css/frontend.min.css@ver=3.2.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-5-all-css'  href='wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css@ver=4.6.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css@ver=4.6.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementskit-css-widgetarea-control-editor-css'  href='wp-content/plugins/elementskit-lite/modules/controls/assets/css/widgetarea-editor.css@ver=2.2.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css'  href='wp-content/uploads/elementor/css/global.css@ver=1618111063.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-36-css'  href='wp-content/uploads/elementor/css/post-36.css@ver=1621087437.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-15-css'  href='wp-content/uploads/elementor/css/post-15.css@ver=1620963953.css' type='text/css' media='all' />
+<link rel='stylesheet' id='happy-icons-css'  href='wp-content/plugins/happy-elementor-addons/assets/fonts/style.min.css@ver=2.22.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css@ver=4.7.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-32-css'  href='wp-content/uploads/elementor/css/post-32.css@ver=1618922356.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-ekiticons-css'  href='wp-content/plugins/elementskit-lite/modules/controls/assets/css/ekiticons.css@ver=5.9.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ekit-widget-styles-css'  href='wp-content/plugins/elementskit-lite/widgets/init/assets/css/widget-styles.css@ver=2.2.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ekit-responsive-css'  href='wp-content/plugins/elementskit-lite/widgets/init/assets/css/responsive.css@ver=2.2.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='happy-elementor-addons-36-css'  href='wp-content/uploads/happyaddons/css/ha-36.css@ver=2.22.1.1621087437.css' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-1-css'  href='wp-content/plugins/happy-elementor-addons/assets/fonts/style.min.css@ver=2.22.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-happy-icons-css'  href='wp-content/plugins/happy-elementor-addons/assets/fonts/style.min.css@ver=2.22.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css'  href='wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css@ver=5.15.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-solid-css'  href='wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css@ver=5.15.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-brands-css'  href='wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css@ver=5.15.1.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js@ver=4.6.0' id='font-awesome-4-shim-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.min.js@ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min.js@ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/36" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.7.2" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed@url=https%253A%252F%252Fpigtoken.finance%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed@url=https%253A%252F%252Fpigtoken.finance%252F&amp;format=xml" />
+<link rel="icon" href="wp-content/uploads/2021/04/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="wp-content/uploads/2021/04/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="wp-content/uploads/2021/04/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://pigtoken.finance/wp-content/uploads/2021/04/cropped-favicon-270x270.png" />
+</head>
+<body class="home page-template page-template-elementor_header_footer page page-id-36 elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-36">
+
+		<div data-elementor-type="header" data-elementor-id="15" class="elementor elementor-15 elementor-location-header" data-elementor-settings="[]">
+		<div class="elementor-section-wrap">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-1834ad28 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1834ad28" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6282b039" data-id="6282b039" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-1ad6e8ad elementor-widget elementor-widget-image" data-id="1ad6e8ad" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="index.html">
+							<img width="120" height="167" src="wp-content/uploads/2021/04/Layer-2.png" class="attachment-large size-large" alt="" loading="lazy" />								</a>
+											</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-29440694" data-id="29440694" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-3bdfa859 elementor-widget elementor-widget-ekit-nav-menu" data-id="3bdfa859" data-element_type="widget" data-widget_type="ekit-nav-menu.default">
+				<div class="elementor-widget-container">
+			<div class="ekit-wid-con ekit_menu_responsive_tablet" data-hamburger-icon="" data-hamburger-icon-type="icon" data-responsive-breakpoint="1024">            <button class="elementskit-menu-hamburger elementskit-menu-toggler">
+                                    <span class="elementskit-menu-hamburger-icon"></span><span class="elementskit-menu-hamburger-icon"></span><span class="elementskit-menu-hamburger-icon"></span>
+                            </button>
+            <div id="ekit-megamenu-pig-token" class="elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default elementskit_line_arrow ekit-nav-menu-one-page-yes"><ul id="main-menu" class="elementskit-navbar-nav elementskit-menu-po-center submenu-click-on-icon"><li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="index.html#tokenomics" class="ekit-menu-nav-link">Tokenomics</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="index.html#roadmap" class="ekit-menu-nav-link">Roadmap</a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="index.html#FAQ" class="ekit-menu-nav-link">FAQ</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://farming.pigtoken.finance/farm-view.html?address=0x0C9Cd9f25E610B5E87177b81AeF6982AAcd1cb69" class="ekit-menu-nav-link">NFT Farm</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://bscscan.com/token/0x8850d2c68c632e3b258e612abaa8fada7e6958e5#readContract" class="ekit-menu-nav-link">Contract</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="index.html@p=71.html" class="ekit-menu-nav-link">How To Buy</a></li>
+<li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="index.html@p=178.html" class="ekit-menu-nav-link">Donate</a></li>
+</ul>
+				<div class="elementskit-nav-identity-panel">
+					<div class="elementskit-site-title">
+						<a class="elementskit-nav-logo" href="index.html" target="_self" rel="">
+							<img src="wp-content/uploads/2021/04/Layer-2.png" alt="">
+						</a>
+					</div>
+					<button class="elementskit-menu-close elementskit-menu-toggler" type="button">X</button>
+				</div>
+			</div><div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler ekit-nav-menu--overlay"></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6010cdfe" data-id="6010cdfe" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-760e35bd elementor-align-center elementor-mobile-align-justify elementor-widget elementor-widget-button" data-id="760e35bd" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x8850d2c68c632e3b258e612abaa8fada7e6958e5" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">BUY NOW</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				</div>
+		</div>
+				<div data-elementor-type="wp-page" data-elementor-id="36" class="elementor elementor-36" data-elementor-settings="[]">
+							<div class="elementor-section-wrap">
+							<section class="elementor-section elementor-top-section elementor-element elementor-element-4868be4f elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="4868be4f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3f9bd503" data-id="3f9bd503" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-7d3df9a8 animated-slow elementor-invisible elementor-widget elementor-widget-image" data-id="7d3df9a8" data-element_type="widget" data-settings="{&quot;motion_fx_motion_fx_mouse&quot;:&quot;yes&quot;,&quot;motion_fx_tilt_effect&quot;:&quot;yes&quot;,&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;motion_fx_tilt_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]}}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="538" height="478" src="wp-content/uploads/2021/04/icon-pigg.png" class="attachment-large size-large" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/icon-pigg.png 538w, wp-content/uploads/2021/04/icon-pigg-300x267.png 300w" sizes="(max-width: 538px) 100vw, 538px" />											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5987305 animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="5987305" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">THE ORIGINAL</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6b155d46 animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="6b155d46" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">black hole token</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-29b0753 animated-slow elementor-widget-divider--view-line elementor-invisible elementor-widget elementor-widget-divider" data-id="29b0753" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-17b18110 elementor-align-center elementor-mobile-align-center animated-slow elementor-invisible elementor-widget elementor-widget-button" data-id="17b18110" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://unidexbeta.app/bscCharting?token=0x8850d2c68c632e3b258e612abaa8fada7e6958e5" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">View chart</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-1aa8afa3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1aa8afa3" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-43e2e0ac" data-id="43e2e0ac" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-185f2fdc elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box" data-id="185f2fdc" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="500" height="500" src="wp-content/uploads/2021/04/bagcoin-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/bagcoin-2.png 500w, wp-content/uploads/2021/04/bagcoin-2-300x300.png 300w, wp-content/uploads/2021/04/bagcoin-2-150x150.png 150w" sizes="(max-width: 500px) 100vw, 500px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Over 57%</h3><p class="elementor-image-box-description">Of supply held by the Black Hole.</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6700055" data-id="6700055" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-ec7af98 elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box" data-id="ec7af98" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="500" height="500" src="wp-content/uploads/2021/04/telegram-icon-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/telegram-icon-2.png 500w, wp-content/uploads/2021/04/telegram-icon-2-300x300.png 300w, wp-content/uploads/2021/04/telegram-icon-2-150x150.png 150w" sizes="(max-width: 500px) 100vw, 500px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Over 24,000</h3><p class="elementor-image-box-description">Telegram Members</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-5a65c4bc" data-id="5a65c4bc" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6aad05fb elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box" data-id="6aad05fb" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="500" height="500" src="wp-content/uploads/2021/04/holder-token-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/holder-token-2.png 500w, wp-content/uploads/2021/04/holder-token-2-300x300.png 300w, wp-content/uploads/2021/04/holder-token-2-150x150.png 150w" sizes="(max-width: 500px) 100vw, 500px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Over 168,000</h3><p class="elementor-image-box-description">PIG Token Holders</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-758909ec" data-id="758909ec" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-123e4ece elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box" data-id="123e4ece" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="500" height="500" src="wp-content/uploads/2021/04/twitter-icon-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/twitter-icon-2.png 500w, wp-content/uploads/2021/04/twitter-icon-2-300x300.png 300w, wp-content/uploads/2021/04/twitter-icon-2-150x150.png 150w" sizes="(max-width: 500px) 100vw, 500px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Over 34,000</h3><p class="elementor-image-box-description">Twitter followers</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7c33ca1c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7c33ca1c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-692c57a" data-id="692c57a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-154bacb4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="154bacb4" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-617dbc6d" data-id="617dbc6d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-e11a69b elementor-invisible elementor-widget elementor-widget-heading" data-id="e11a69b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">about</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-117cbfa6 elementor-invisible elementor-widget elementor-widget-heading" data-id="117cbfa6" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">pig token</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3dd86299 animated-slow elementor-widget-divider--view-line elementor-invisible elementor-widget elementor-widget-divider" data-id="3dd86299" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-349b3f33 elementor-widget elementor-widget-text-editor" data-id="349b3f33" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>PIG is a token on Binance Smart Chain boasting a number of impressive features. It is the first token with a Black Hole design that exponentially cuts the total supply in circulation by massive amounts. PIG combines this with an innovative Auto-Liquidity feature that increases liquidity of the token rapidly. And finally, PIG has massive decentralization on a scale rarely seen in other tokens. Combine these three together and you get a power house token out of the hands of anyone, except the community as a whole.</p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-67ad5491" data-id="67ad5491" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-78e56a9c elementor-widget elementor-widget-image" data-id="78e56a9c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="640" height="640" src="wp-content/uploads/2021/04/piggg-2.png" class="attachment-large size-large" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/piggg-2.png 640w, wp-content/uploads/2021/04/piggg-2-300x300.png 300w, wp-content/uploads/2021/04/piggg-2-150x150.png 150w" sizes="(max-width: 640px) 100vw, 640px" />											</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3b252e84 elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3b252e84" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6c479477" data-id="6c479477" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-575e3ca elementor-widget elementor-widget-menu-anchor" data-id="575e3ca" data-element_type="widget" data-widget_type="menu-anchor.default">
+				<div class="elementor-widget-container">
+					<div id="tokenomics" class="elementor-menu-anchor"></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5aa5debc elementor-invisible elementor-widget elementor-widget-heading" data-id="5aa5debc" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">black hole</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7b054d7f elementor-invisible elementor-widget elementor-widget-heading" data-id="7b054d7f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">algorithm</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-478e2d3a animated-slow elementor-widget-divider--view-line elementor-invisible elementor-widget elementor-widget-divider" data-id="478e2d3a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-bb8982e elementor-widget elementor-widget-text-editor" data-id="bb8982e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>The Black Hole owned over 50% of supply at launch. The Black Hole counts as one of the wallet holders that 2% of transactions are distributed to. This results in exponential growth of the black hole and exponential burn of the token supply. At the time of this writing, the black hole has already grown to 55% percent ownership of the total supply.</p></div>
+				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-14eb9528 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="14eb9528" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-687f60bb" data-id="687f60bb" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-36fb754a elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="36fb754a" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="300" height="300" src="wp-content/uploads/2021/04/unrug-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/unrug-2.png 300w, wp-content/uploads/2021/04/unrug-2-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Unruggable</h3><p class="elementor-image-box-description">Liquidity is locked in PancakeSwap and ownership of the contract has been transferred to the burn address.</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-22baed6f" data-id="22baed6f" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-27fa472a elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="27fa472a" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="300" height="300" src="wp-content/uploads/2021/04/fair-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/fair-2.png 300w, wp-content/uploads/2021/04/fair-2-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Fair Launch</h3><p class="elementor-image-box-description">100% of the PIG supply was seeded as liquidity. That means no presale and no allocation to team members.</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-55180b73" data-id="55180b73" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-33866c9d elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="33866c9d" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="300" height="300" src="wp-content/uploads/2021/04/safeauto-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/safeauto-2.png 300w, wp-content/uploads/2021/04/safeauto-2-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Safe Auto-farming</h3><p class="elementor-image-box-description">2% of all transactions are distributed to holders. Watch your wallet climb the minute you begin holding.</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-31942c39 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="31942c39" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-6386368a" data-id="6386368a" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-59282154 elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="59282154" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="300" height="300" src="wp-content/uploads/2021/04/100-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/100-2.png 300w, wp-content/uploads/2021/04/100-2-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">100% Decentralized</h3><p class="elementor-image-box-description">PIG token is community led and managed by volunteers, since ownership has been burned and launch was completely seeded as liquidity.</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-84fa402" data-id="84fa402" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-30c56064 elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="30c56064" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="300" height="300" src="wp-content/uploads/2021/04/continue-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/continue-2.png 300w, wp-content/uploads/2021/04/continue-2-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Continuously Rising Price Floor</h3><p class="elementor-image-box-description">3% of every transaction is locked as liquidity in the PancakeSwap PIG/BNB pool, creating an ever rising price floor.</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-7166f62c" data-id="7166f62c" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6068c6fb elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="6068c6fb" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="300" height="300" src="wp-content/uploads/2021/04/whale-2.png" class="attachment-full size-full" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/whale-2.png 300w, wp-content/uploads/2021/04/whale-2-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Whale Shock Safety</h3><p class="elementor-image-box-description">No wallet holds more than 1% of token supply and no transaction can involve more than 5 trillion tokens.</p></div></div>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-71244542 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="71244542" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6833b9b9" data-id="6833b9b9" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-2cfa3fe8 elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2cfa3fe8" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5f296b1" data-id="5f296b1" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4267ea0d elementor-widget elementor-widget-image" data-id="4267ea0d" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="600" height="338" src="wp-content/uploads/2021/04/ezgif.com-video-to-gif.gif" class="attachment-large size-large" alt="" loading="lazy" />											</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-13cddf7c" data-id="13cddf7c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-59dc3b elementor-invisible elementor-widget elementor-widget-heading" data-id="59dc3b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">pig token</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6ec95fb0 elementor-invisible elementor-widget elementor-widget-heading" data-id="6ec95fb0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">NFT Farm</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-43cb467e animated-slow elementor-widget-divider--view-line elementor-invisible elementor-widget elementor-widget-divider" data-id="43cb467e" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-168efa18 elementor-widget elementor-widget-text-editor" data-id="168efa18" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Pig Token has an innovative NFT Farm where you can stake PIG tokens or partner tokens to earn beautiful NFTs! When you stake your tokens, you earn points which can be used to select the NFTs you&#8217;d like. There will be many more NFTs uploaded over time, including tons from our partners! So it&#8217;s a good idea to start staking your tokens right away and start earning points. As we form new partnerships, you will also have the ability to earn NFTs from different Binance Smart Chain coins you might hold. Our Piggy Bank is stuffed with benefits for you to enjoy!</p></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1c3a9d88 elementor-align-right elementor-mobile-align-center animated-slow elementor-invisible elementor-widget elementor-widget-button" data-id="1c3a9d88" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://farming.pigtoken.finance/farm-view.html?address=0x0C9Cd9f25E610B5E87177b81AeF6982AAcd1cb69" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">nft farm</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7c4c559c elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7c4c559c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4b834dd2" data-id="4b834dd2" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-3fc02992 elementor-widget elementor-widget-menu-anchor" data-id="3fc02992" data-element_type="widget" data-widget_type="menu-anchor.default">
+				<div class="elementor-widget-container">
+					<div id="roadmap" class="elementor-menu-anchor"></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-771bc92c elementor-invisible elementor-widget elementor-widget-heading" data-id="771bc92c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">PIG</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3a5bd5d4 elementor-invisible elementor-widget elementor-widget-heading" data-id="3a5bd5d4" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">ROADMAP</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-aed87c1 animated-slow elementor-widget-divider--view-line elementor-invisible elementor-widget elementor-widget-divider" data-id="aed87c1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-589f9d3c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="589f9d3c" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-56c6746" data-id="56c6746" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-78024b16 ha-mode--comfy ha-direction--right elementor-widget elementor-widget-ha-list-group happy-addon ha-list-group happy-addon-pro" data-id="78024b16" data-element_type="widget" data-widget_type="ha-list-group.default">
+				<div class="elementor-widget-container">
+			
+        <ul class="ha-list-wrap">
+            
+                <li class="ha-list-item elementor-repeater-item-aee07b9">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-check"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        Website And Social Media Release                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-07f2548">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-check"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        CoinGecko Listing                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-eaad83f">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-check"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        CoinMarketCap Listing                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-709edec">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-check"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        Partnership Announcements                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-6e8160a">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-check"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        NFT + Farming                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-b01f7c4">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-check"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        Audit By Ether Authourity                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-dbaa01d">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-check"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        Website Upgrade                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+                    </ul>
+
+        		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-319649f8" data-id="319649f8" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-2f442994 ha-mode--comfy ha-direction--right elementor-widget elementor-widget-ha-list-group happy-addon ha-list-group happy-addon-pro" data-id="2f442994" data-element_type="widget" data-widget_type="ha-list-group.default">
+				<div class="elementor-widget-container">
+			
+        <ul class="ha-list-wrap">
+            
+                <li class="ha-list-item elementor-repeater-item-bd29bbd">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-check"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        NFT Farm Performance Upgrade                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-07f2548">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-circle-notch"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        Marketing Push                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-8c08218">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-circle-notch"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        VIPig Club                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-cfd6eb3">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-circle-notch"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        Donation Campaign                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-e1d1d83">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-circle-notch"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        New Top Exchange Launch                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-da2f87d">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-circle-notch"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        PIG Merchandise                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+            
+                <li class="ha-list-item elementor-repeater-item-dedfef1">
+
+                    
+                        <div class="ha-item-wrap">
+
+							                                <div class="ha-icon icon">
+									<i aria-hidden="true" class="fas fa-circle-notch"></i>                                </div>
+
+                            
+                            <div class="ha-text">
+
+                                    <h4 class="ha-list-title">
+                                        Further Ecosystem Development                                    </h4>
+
+                                                            </div>
+
+                                                            <div class="ha-direction">
+									<i aria-hidden="true" class="hm hm-play-next"></i>                                </div>
+                            
+                        </div>
+
+                    
+                </li>
+
+                    </ul>
+
+        		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-73004ec2 elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73004ec2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1d18b0f9" data-id="1d18b0f9" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-14c3aa45 elementor-invisible elementor-widget elementor-widget-heading" data-id="14c3aa45" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">our</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-300165a elementor-invisible elementor-widget elementor-widget-heading" data-id="300165a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">partners</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-45bad79f animated-slow elementor-widget-divider--view-line elementor-invisible elementor-widget elementor-widget-divider" data-id="45bad79f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-4c9974eb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4c9974eb" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-39cc01c2" data-id="39cc01c2" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-656dbbfa elementor-widget elementor-widget-image" data-id="656dbbfa" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="600" height="600" src="wp-content/uploads/2021/04/27.png" class="attachment-large size-large" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/27.png 600w, wp-content/uploads/2021/04/27-300x300.png 300w, wp-content/uploads/2021/04/27-150x150.png 150w" sizes="(max-width: 600px) 100vw, 600px" />											</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-42f1828c" data-id="42f1828c" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-662a13d9 elementor-widget elementor-widget-image" data-id="662a13d9" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="600" height="600" src="wp-content/uploads/2021/04/26.png" class="attachment-large size-large" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/26.png 600w, wp-content/uploads/2021/04/26-300x300.png 300w, wp-content/uploads/2021/04/26-150x150.png 150w" sizes="(max-width: 600px) 100vw, 600px" />											</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-11b1881f" data-id="11b1881f" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-638f3a92 elementor-widget elementor-widget-image" data-id="638f3a92" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="600" height="600" src="wp-content/uploads/2021/04/25.png" class="attachment-large size-large" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/25.png 600w, wp-content/uploads/2021/04/25-300x300.png 300w, wp-content/uploads/2021/04/25-150x150.png 150w" sizes="(max-width: 600px) 100vw, 600px" />											</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-77c542e3 elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="77c542e3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-52052a78" data-id="52052a78" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-67a8aecd elementor-widget elementor-widget-image" data-id="67a8aecd" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="640" height="640" src="wp-content/uploads/2021/04/pigmoon-2.png" class="attachment-large size-large" alt="" loading="lazy" srcset="wp-content/uploads/2021/04/pigmoon-2.png 640w, wp-content/uploads/2021/04/pigmoon-2-300x300.png 300w, wp-content/uploads/2021/04/pigmoon-2-150x150.png 150w" sizes="(max-width: 640px) 100vw, 640px" />											</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1af9619d" data-id="1af9619d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-f7df6e8 elementor-widget elementor-widget-menu-anchor" data-id="f7df6e8" data-element_type="widget" data-widget_type="menu-anchor.default">
+				<div class="elementor-widget-container">
+					<div id="FAQ" class="elementor-menu-anchor"></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2d3ca454 elementor-invisible elementor-widget elementor-widget-heading" data-id="2d3ca454" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Frequently</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-22c0b3fa elementor-invisible elementor-widget elementor-widget-heading" data-id="22c0b3fa" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Asked Questions</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6c1984ff animated-slow elementor-widget-divider--view-line elementor-invisible elementor-widget elementor-widget-divider" data-id="6c1984ff" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7b0d560 elementor-widget elementor-widget-elementskit-accordion" data-id="7b0d560" data-element_type="widget" data-widget_type="elementskit-accordion.default">
+				<div class="elementor-widget-container">
+			<div class="ekit-wid-con" >
+
+        <div class="elementskit-accordion accoedion-primary" id="accordion-609ff24aea2ea">
+
+            
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-0-7b0d560">
+                        <a href="index.html#Collapse-774a0cf609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-774a0cf609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-774a0cf609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">How do I buy PIG?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-774a0cf609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-0-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <p class="faq__answer-txt">PIG is only available on Binance Smart Chain. To use Binance Smart Chain, you must configure your wallet to use the Binance Smart Chain network. Then you would need to own BNB tokens for gas fees. Finally you would need to swap for PIG Token on an exchange like PancakeSwap.</p>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-1-7b0d560">
+                        <a href="index.html#Collapse-1321175609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-1321175609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-1321175609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">Why do I get an error when I try to buy or sell on PancakeSwap?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-1321175609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-1-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <dl><dd><p class="faq__answer-txt">During times of high trade volume, prices will fluctuate greatly and may lead to an error. To account for this, you must increase the slippage.</p></dd></dl>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-2-7b0d560">
+                        <a href="index.html#Collapse-2511352609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-2511352609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-2511352609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">How do I stake PIG?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-2511352609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-2-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <p>The way you stake PIG is by holding it in your wallet. The quantity of your PIG will automatically rise as soon as you begin holding it. You can also stake PIG tokens on the NFT farm to earn NFTs.</p>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-3-7b0d560">
+                        <a href="index.html#Collapse-5bb7281609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-5bb7281609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-5bb7281609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">What is the APY or APR from PIG auto-staking?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-5bb7281609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-3-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <p>There is no APY or APR when you stake PIG by holding it in your wallet. What you earn depends entirely on transactions on the blockchain. The more transactions there are in the market, the more you get from PIG token's fees transactions, which are distributed to holders.</p>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-4-7b0d560">
+                        <a href="index.html#Collapse-bb05770609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-bb05770609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-bb05770609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">What kind of marketing will be done for PIG?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-bb05770609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-4-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <p>PIG has a team of both professionals and community volunteers constantly working behind the scenes on updates, partnerships, social media, and more. As you can see, this has worked very well and we will continue increase our efforts.</p>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-5-7b0d560">
+                        <a href="index.html#Collapse-f40ab30609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-f40ab30609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-f40ab30609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">Has PIG been audited?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-f40ab30609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-5-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <p>Yes, PIG has been audited by EtherAuthority and CaptainJack. We also welcome any reputable auditor to inspect PIG and let us know so we can post it on social media.</p>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-6-7b0d560">
+                        <a href="index.html#Collapse-02708f6609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-02708f6609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-02708f6609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">What is the NFT Farm and how does it work?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-02708f6609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-6-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <p>The NFT farm is a page where you can stake PIG tokens or partner tokens, then you earn points which you can use to buy NFTs. All you have to do is be on the right Smart Chain network and choose the amount of tokens you'd like to stake. There is also a handy guide at the NFT farm home page to help you further.</p>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-7-7b0d560">
+                        <a href="index.html#Collapse-8c67301609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-8c67301609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-8c67301609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">Why am I unable to stake / unstake my tokens from the NFT farm?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-8c67301609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-7-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <p>Please note that the NFT farm is a new service. In times where there is a lot of activity and community interest, the network may lag. Just try again later and it will eventually go through. Over time, improvements to the service will come as well. BSC may also be lagging itself, increasing the gas may help transactions go through.</p>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                
+                <div class="elementskit-card">
+                    <div class="elementskit-card-header" id="primaryHeading-8-7b0d560">
+                        <a href="index.html#Collapse-ac9d38e609ff24aea2ea" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-ac9d38e609ff24aea2ea" aria-expanded="false" aria-controls="Collapse-ac9d38e609ff24aea2ea">
+                            
+                            <span class="ekit-accordion-title">Who runs the NFT Farm service and how do I know it&#039;s safe?</span>
+
+                            
+                                <div class="ekit_accordion_icon_group">
+                                    <div class="ekit_accordion_normal_icon">
+                                        <!-- Normal Icon -->
+                                        <i aria-hidden="true" class="icon-open icon-right icon icon-down-arrow1"></i>                                    </div>
+
+                                    <div class="ekit_accordion_active_icon">
+                                        <!-- Active Icon -->
+                                        <i aria-hidden="true" class="icon-closed icon-right icon icon-up-arrow"></i>                                    </div>
+
+                                </div>
+
+                            
+                                                    </a>
+                    </div>
+
+                    <div id="Collapse-ac9d38e609ff24aea2ea" class=" collapse" aria-labelledby="primaryHeading-8-7b0d560" data-parent="#accordion-609ff24aea2ea">
+
+                        <div class="elementskit-card-body ekit-accordion--content">
+                            <p>The NFT service is operated by Unifty.io and interactions with the NFT service are done through smart contracts created by Unifty.io. Should the PIG site go down, you can still interact with the service at https://unifty.io/bsc/farm-view.html?address=[FARM_CONTRACT_ADDRESS] or directly through smart contracts. If you need technical support for the NFT service, please contact Unifty.</p>                        </div>
+
+                    </div>
+
+                </div><!-- .elementskit-card END -->
+
+                        </div>
+    </div>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+						</div>
+					</div>
+				<div data-elementor-type="footer" data-elementor-id="32" class="elementor elementor-32 elementor-location-footer" data-elementor-settings="[]">
+		<div class="elementor-section-wrap">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-43f9af05 elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="43f9af05" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6fa87a9f" data-id="6fa87a9f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-2eba49e8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2eba49e8" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2e4a632f" data-id="2e4a632f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-5d5fe719 elementor-widget elementor-widget-heading" data-id="5d5fe719" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Crypto</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-c39d559 elementor-align-left elementor-mobile-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="c39d559" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+					<a href="https://www.coingecko.com/en/coins/pig-finance">					<span class="elementor-icon-list-text">CoinGecko</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="https://www.livecoinwatch.com/price/PIGToken-PIG">					<span class="elementor-icon-list-text">Live Coin Watch</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="https://coinmarketcap.com/currencies/pig-finance/">					<span class="elementor-icon-list-text">CoinMarketCap</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-780ae98c" data-id="780ae98c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-39764016 elementor-widget elementor-widget-heading" data-id="39764016" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Exchange</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-1e9e6f6b elementor-align-left elementor-mobile-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="1e9e6f6b" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+					<a href="https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x8850d2c68c632e3b258e612abaa8fada7e6958e5">					<span class="elementor-icon-list-text">PancakeSwap</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="https://julswap.com/#/swap?outputCurrency=0x8850d2c68c632e3b258e612abaa8fada7e6958e5">					<span class="elementor-icon-list-text">JulSwap</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-5a1368a3" data-id="5a1368a3" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-3841a1d4 elementor-widget elementor-widget-heading" data-id="3841a1d4" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Partners</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-5592dea3 elementor-align-left elementor-mobile-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="5592dea3" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+					<a href="index.html#">					<span class="elementor-icon-list-text">Nifty.io</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="https://safetoken.xyz/">					<span class="elementor-icon-list-text">SafeToken</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="https://v2.superpepebros.finance">					<span class="elementor-icon-list-text">Super Pepe Bros</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3408c1af" data-id="3408c1af" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-345696e7 elementor-widget elementor-widget-heading" data-id="345696e7" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Social</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7f152a37 elementor-shape-circle e-grid-align-left elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="7f152a37" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-social-icons-wrapper elementor-grid">
+							<div class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-telegram elementor-repeater-item-ae880e4" href="https://t.me/PigTokenBSC" target="_blank">
+						<span class="elementor-screen-only">Telegram</span>
+						<i class="fab fa-telegram"></i>					</a>
+				</div>
+							<div class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-47850e1" href="https://twitter.com/Pig_Finance" target="_blank">
+						<span class="elementor-screen-only">Twitter</span>
+						<i class="fab fa-twitter"></i>					</a>
+				</div>
+							<div class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-medium elementor-repeater-item-6093371" href="https://pig-finance.medium.com" target="_blank">
+						<span class="elementor-screen-only">Medium</span>
+						<i class="fab fa-medium"></i>					</a>
+				</div>
+							<div class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-reddit elementor-repeater-item-072c49a" href="https://www.reddit.com/r/PigToken/" target="_blank">
+						<span class="elementor-screen-only">Reddit</span>
+						<i class="fab fa-reddit"></i>					</a>
+				</div>
+					</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-238f9644 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="238f9644" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false,&quot;ekit_has_onepagescroll_dot&quot;:&quot;yes&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7177a46a" data-id="7177a46a" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c308505" data-id="c308505" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-7215c75f elementor-widget elementor-widget-text-editor" data-id="7215c75f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>© PIG Token 2021. All Rights Reserved.</p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				</div>
+		</div>
+		
+<script type='text/javascript' id='happy-elementor-addons-js-extra'>
+/* <![CDATA[ */
+var HappyLocalize = {"ajax_url":"https:\/\/pigtoken.finance\/wp-admin\/admin-ajax.php","nonce":"d618b3c84b"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/happy-elementor-addons/assets/js/happy-addons.min.js@ver=2.22.1' id='happy-elementor-addons-js'></script>
+<script type='text/javascript' id='happy-addons-pro-js-extra'>
+/* <![CDATA[ */
+var HappyProLocalize = {"ajax_url":"https:\/\/pigtoken.finance\/wp-admin\/admin-ajax.php","nonce":"6f901dd2cd"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/Archive/assets/js/happy-addons-pro.js@ver=1.11.1' id='happy-addons-pro-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementskit-lite/libs/framework/assets/js/frontend-script.js@ver=2.2.1' id='elementskit-framework-js-frontend-js'></script>
+<script type='text/javascript' id='elementskit-framework-js-frontend-js-after'>
+		var elementskit = {
+            resturl: 'https://pigtoken.finance/wp-json/elementskit/v1/',
+        }
+
+		
+</script>
+<script type='text/javascript' src='wp-content/plugins/elementskit-lite/widgets/init/assets/js/widget-scripts.js@ver=2.2.1' id='ekit-widget-scripts-js'></script>
+<script type='text/javascript' src='wp-includes/js/wp-embed.min.js@ver=5.7.2' id='wp-embed-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js@ver=3.2.1' id='elementor-pro-webpack-runtime-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/js/webpack.runtime.min.js@ver=3.1.4' id='elementor-webpack-runtime-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/js/frontend-modules.min.js@ver=3.1.4' id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js@ver=3.2.1' id='elementor-sticky-js'></script>
+<script type='text/javascript' id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/pigtoken.finance\/wp-admin\/admin-ajax.php","nonce":"c6e960d80a","urls":{"assets":"https:\/\/pigtoken.finance\/wp-content\/plugins\/elementor-pro\/assets\/"},"i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/pigtoken.finance\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type='text/javascript' src='wp-content/plugins/elementor-pro/assets/js/frontend.min.js@ver=3.2.1' id='elementor-pro-frontend-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/ui/core.min.js@ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js@ver=4.8.1' id='elementor-dialog-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js@ver=4.0.2' id='elementor-waypoints-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js@ver=3.1.4' id='share-link-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js@ver=5.3.6' id='swiper-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false,"isImprovedAssetsLoading":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"3.1.4","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"a11y_improvements":true,"landing-pages":true,"form-submissions":true},"urls":{"assets":"https:\/\/pigtoken.finance\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[],"general":[]},"kit":{"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":36,"title":"Pig%20Token%20%E2%80%93%20Yield%20Generation%20Protocol","excerpt":"","featuredImage":false}};
+</script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/js/frontend.min.js@ver=3.1.4' id='elementor-frontend-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js@ver=3.2.1' id='pro-preloaded-elements-handlers-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementskit-lite/widgets/init/assets/js/slick.min.js@ver=2.2.1' id='ekit-slick-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementskit-lite/widgets/init/assets/js/elementor.js@ver=2.2.1' id='elementskit-elementor-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/js/preloaded-elements-handlers.min.js@ver=3.1.4' id='preloaded-elements-handlers-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementskit-lite/modules/controls/assets/js/widgetarea-editor.js@ver=2.2.1' id='elementskit-js-widgetarea-control-editor-js'></script>
+
+</body>
+</html>
